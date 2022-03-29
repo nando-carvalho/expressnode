@@ -7,8 +7,13 @@ const HomeSchema = new mongoose.Schema({
 
 const HomeModel = mongoose.model('Home', HomeSchema);
 
-class Home {
+//Provisório:
 
-}
+module.exports = HomeModel;
 
-module.exports = Home;
+//ideal:
+// class Home {
+
+// }
+
+// module.exports = Home;

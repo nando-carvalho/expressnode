@@ -1,6 +1,18 @@
+require('dotenv').config();
 const porta = 3000;
 const express = require('express');
 const app = express();
+
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.CONNECTIONSTRING, {useNewUrlParser: true, useUnifiedTopology: true})
+  .then(() => {
+    console.log('Conectei à base de dados!');
+    app.emit('app executando porta! Pronto para conexão');
+  })
+  .catch(e => console.log(e));
+
+
 const bodyParser = require('body-parser');
 const routes = require('./routes');
 const path = require('path');
